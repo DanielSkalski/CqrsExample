@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "3a91d3df-11c6-4d31-acf6-80d22aeb7d1a",
+		"name": "MeetupApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "No cqrs version",
+			"item": [
+				{
+					"name": "Get meetups list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/meetup",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"meetup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get meetup",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/meetup/3",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"meetup",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create meetup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"HostUserId\": 4,\n\t\"Name\": \"O pogodzie\",\n\t\"SeatsAvailable\": 15\n}"
+						},
+						"url": {
+							"raw": "{{server}}/meetup",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"meetup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create seat reservation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ParticipantUserId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/meetup/4/seatreservation",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"meetup",
+								"4",
+								"seatreservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete seat reservation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/meetup/3/seatreservation/2",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"meetup",
+								"3",
+								"seatreservation",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"DisplayName\": \"Kunegunda\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/userprofile/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"userprofile",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CQRS separate tables",
+			"item": [
+				{
+					"name": "Get meetups list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/meetup",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"meetup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get meetup",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/meetup/bf545ec3-76e3-4599-9295-7295c14f79dc",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"meetup",
+								"bf545ec3-76e3-4599-9295-7295c14f79dc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create meetup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"HostUserId\": \"282e3bd3-eabd-42d0-8b43-8f7a03c0ec8a\",\n\t\"Name\": \"O pogodzie\",\n\t\"SeatsAvailable\": 15\n}"
+						},
+						"url": {
+							"raw": "{{server}}/meetup",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"meetup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create seat reservation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ParticipantUserId\": \"d3f5ecec-6270-4fd6-b431-8e0e8a5b8543\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/meetup/acd2f929-26e2-4e7d-8ad6-5d5aadafd68d/seatreservation",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"meetup",
+								"acd2f929-26e2-4e7d-8ad6-5d5aadafd68d",
+								"seatreservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete seat reservation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/meetup/bf545ec3-76e3-4599-9295-7295c14f79dc/seatreservation/d3f5ecec-6270-4fd6-b431-8e0e8a5b8543",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"meetup",
+								"bf545ec3-76e3-4599-9295-7295c14f79dc",
+								"seatreservation",
+								"d3f5ecec-6270-4fd6-b431-8e0e8a5b8543"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"DisplayName\": \"Genowefa\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/userprofile/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"userprofile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"DisplayName\": \"Genowefa\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/userprofile/d3f5ecec-6270-4fd6-b431-8e0e8a5b8543",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"userprofile",
+								"d3f5ecec-6270-4fd6-b431-8e0e8a5b8543"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
