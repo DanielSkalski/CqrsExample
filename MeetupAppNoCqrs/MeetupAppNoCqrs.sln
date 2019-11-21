@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetupAppNoCqrs", "MeetupAppNoCqrs\MeetupAppNoCqrs.csproj", "{93759D0D-56EA-4980-B4BB-83FA22DCF141}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetupAppNoCqrs.Domain", "MeetupAppNoCqrs.Domain\MeetupAppNoCqrs.Domain.csproj", "{B6B18948-824B-44ED-906C-83828DE7A828}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93759D0D-56EA-4980-B4BB-83FA22DCF141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93759D0D-56EA-4980-B4BB-83FA22DCF141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93759D0D-56EA-4980-B4BB-83FA22DCF141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93759D0D-56EA-4980-B4BB-83FA22DCF141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6B18948-824B-44ED-906C-83828DE7A828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6B18948-824B-44ED-906C-83828DE7A828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6B18948-824B-44ED-906C-83828DE7A828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6B18948-824B-44ED-906C-83828DE7A828}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48B70B4F-1BD1-4B88-8D4F-8FEC2A250B55}
+	EndGlobalSection
+EndGlobal
